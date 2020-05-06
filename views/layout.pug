@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+ head
+    title blog page
+    link(rel='stylesheet' href='/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+ body
+    .container-fluid
+        nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.sticky-top
+            a.navbar-brand(href="#") FB
+            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#collapsibleNavbar")
+              span.navbar-toggler-icon
+            div.collapse.navbar-collapse(id="collapsibleNavbar")
+              ul.navbar-nav.nav-fill
+                li.nav-item
+                  a.nav-link(href="/") HOME
+                li.nav-item
+                  a.nav-link(href="/blog") BLOG
+
+        block content
+        
+        footer.bg-dark Albert Attakora Frimpong
+    

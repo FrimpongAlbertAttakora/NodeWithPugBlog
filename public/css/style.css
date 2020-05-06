@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+.container-fluid {
+    padding: 0;
+}
+p {
+    text-align: center;
+    color: green;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    height: 50vh;
+}
+
+#item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
