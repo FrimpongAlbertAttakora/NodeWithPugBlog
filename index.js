@@ -41,6 +41,11 @@ app.get('/blog', async (req, res) => {
     res.render('blog', { posts: query.data });
   });
 
+app.get('/admin', async (req, res) => {
+    const query = await axios.get('http://localhost:1800/post');
+    res.render('admin', { posts: query.data });
+  });
+
 // Connect to DB
 mongoose.connect( 
     process.env.DB_CONNECTION, 

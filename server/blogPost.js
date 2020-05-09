@@ -6,7 +6,7 @@ const BlogPost = require('../models/BlogPost');
 //GET BACK ALL THE POSTS
 router.get('/', async (req, res) => {
     try{
-        const blogposts = await BlogPost.find();
+        const blogposts = await BlogPost.find().sort({date:-1});
             res.json(blogposts);
     }   catch(err){
             res.json({message: err});
@@ -20,14 +20,10 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         author: req.body.author,
         photo: req.body.photo,
-        comment: {
-            date: req.body.comment.date,
-            author: req.body.comment.author,
-            text: req.body.comment.text        }
     });
     try{
     const savedBlogPost = await blogpost.save()
-    res.json(savedBlogPost);
+    res.redirect('/');
     }catch(err){
         res.json({message: err});
     }
@@ -38,6 +34,16 @@ router.delete('/:postId', async (req, res) => {
     try{
         const removedBlogPost = await BlogPost.deleteOne({ _id: req.params.postId });
         res.json(removedBlogPost);
+    }catch (err) {
+        res.json({ message: err });
+    }
+});
+
+//GET SPECIFIC POST
+router.get('/:postId', async (req, res) => {
+    try{
+        const post = await BlogPost.findById(req.params.postId);
+        res.json(post);
     }catch (err) {
         res.json({ message: err });
     }

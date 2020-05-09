@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+    .container.my-4.bg-light
+        .text-center.text-info.display-4.my-3 POST ENTRY
+        div
+            form(action="http://localhost:1800/post/" method="post" class="was-validated shadow font-weight-bold")
+                .form-group.mx-3
+                    label(for="" class="text-uppercase") Title
+                    input(type="text" name="title" id="" class="form-control" required)
+                .form-group.mx-3
+                    label(for="" class="text-uppercase") Author
+                    input(type="text" name="author" id="" class="form-control" required)
+                .form-group.mx-3
+                    label(for="" class="text-uppercase") Photo
+                    input(type="text" name="photo" id="" class="form-control" required)
+                .form-group.mx-3
+                    label(for="" class="text-uppercase") 
+                    textarea(name="post" cols="50" rows="10" placeholder="Post text here ...")
+                .text-center
+                    input(type="submit" value="Send Post" class="btn btn-primary mt-4 mb-5")
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br

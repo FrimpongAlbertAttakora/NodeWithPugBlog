@@ -10,7 +10,7 @@ html(lang='en')
  body
     .container-fluid
         nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.sticky-top
-            a.navbar-brand(href="#") FB
+            a.navbar-brand(href="#") freshNews
             button.navbar-toggler(type="button" data-toggle="collapse" data-target="#collapsibleNavbar")
               span.navbar-toggler-icon
             div.collapse.navbar-collapse(id="collapsibleNavbar")
@@ -19,6 +19,8 @@ html(lang='en')
                   a.nav-link(href="/") HOME
                 li.nav-item
                   a.nav-link(href="/blog") BLOG
+                li.nav-item
+                  a.nav-link(href="/admin") ADMIN
 
         block content
         

@@ -1,4 +1,4 @@
-h1 {
+h1, small {
     text-align: center;
 }
 .container-fluid {
@@ -6,7 +6,6 @@ h1 {
 }
 p {
     text-align: center;
-    color: green;
 }
 
 footer {
@@ -20,5 +19,89 @@ footer {
 
 #item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 1rem;
+    width: 80%;
+    margin-left: 10%;
 }
+
+.post_para {
+    text-align: left;
+}
+
+.jumbotron.big-banner {
+    height: 85vh;
+    width: 80%; 
+    margin-left:10%; 
+    background-size: cover; 
+    background-position: center;
+}
+
+.im.jumbotron.big-banner {
+    height: 45%;
+    width: 25%; 
+    margin-left:25%; 
+    background-size: cover; 
+    background-position: center;
+}
+img {
+    height: 80vh;
+    width: 80%; 
+    margin-left: 10%;
+    background-size: cover; 
+    background-position: center;
+}
+
+.im img {
+    height: 20vh;
+    width: 40%; 
+    margin-left: 40%;
+    background-size: cover; 
+    background-position: center;
+}
+
+ul.navbar-nav.nav-fill {
+    margin-left: 70%;
+}
+
+.postContent {
+    margin: 0 15% 0 15%;
+}
+
+.postContent p {
+    text-align: left;
+}
+
+h4 {
+    margin-bottom: 2rem;
+}
+
+
+/* Media Queries */
+@media(max-width:550px){
+    ul.navbar-nav.nav-fill {
+        margin-left: 0;
+    }
+    
+    img {
+        height: 50vh;
+        width: 80%; 
+        background-size: cover; 
+        background-position: center;
+    }
+
+    .im img {
+        height: 100px;
+        width: 200px; 
+        padding-right: 50%;
+        margin: 0;
+        background-size: cover; 
+        background-position: center;
+    }
+
+    #postItem {
+        margin-left: -5rem;
+    }
+    
+}
+

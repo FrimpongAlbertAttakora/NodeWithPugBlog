@@ -1,14 +1,32 @@
 extends layout
 
 block content
-    h1 Hello World!!  
+    br
+    - const post = posts[0]
+    h1= post.title
+    br
+    img(src= "/images/" + post.photo)
     br
     br
+    .postContent 
+        - const ry = post.post.split('/')
+        for i in ry
+          p= i
+    br
+    
+    h4
+      p 
+        em Previours Post
     for post in posts
       #item
-        p= post.post
-        p= post.title
-
+          .im
+            img(src= "/images/"+ post.photo)
+          #postItem
+            h2= post.title
+            small 
+              em By #{post.author}
+              br
+              em Date #{post.date}
     br
     br
     br
