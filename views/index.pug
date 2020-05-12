@@ -1,5 +1,4 @@
 extends layout
-
 block content
     br
     - const post = posts[0]
@@ -13,25 +12,17 @@ block content
         for i in ry
           p= i
     br
-    
     h4
       p 
         em Previours Post
     for post in posts
-      #item
-          .im
-            img(src= "/images/"+ post.photo)
-          #postItem
-            h2= post.title
-            small 
-              em By #{post.author}
-              br
-              em Date #{post.date}
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
+      a(href=`http://localhost:1800/postItem/${post._id}`)
+        #item
+            .im
+              img(src= "/images/"+ post.photo)
+            #postItem
+              h2= post.title
+              small 
+                em By #{post.author}
+                br
+                em Date #{post.date}

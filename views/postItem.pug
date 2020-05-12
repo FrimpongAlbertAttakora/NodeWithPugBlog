@@ -1,0 +1,27 @@
+extends layout
+block content
+    br
+    h1= postItem.title
+    br
+    img(src= "/images/" + postItem.photo)
+    br
+    br
+    .postContent 
+        - const ry = postItem.post.split('/')
+        for i in ry
+          p= i
+    br
+    h4
+      p 
+        em Previours Post
+    for post in posts
+        a(href=`http://localhost:1800/postItem/${post._id}`)
+            #item
+                .im
+                    img(src= "/images/"+ post.photo)
+                #postItem
+                    h2= post.title
+                    small 
+                    em By #{post.author}
+                    br
+                    em Date #{post.date}

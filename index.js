@@ -6,19 +6,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
-
 // Middlewares
 require('dotenv/config');
 app.use(cors());
 app.use(bodyParser.json());
 
-
 // Body Parser Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
-
-// Serving static folder
-
 
 // Import routes
 const contactRoute = require('./server/blogPost');
@@ -34,6 +29,16 @@ app.set('view engine', 'pug');
 app.get('/', async (req, res) => {
     const query = await axios.get('http://localhost:1800/post');
     res.render('index', { posts: query.data });
+  });
+
+app.get('/postItem/:id', async (req, res) => {
+    const query = await axios.get('http://localhost:1800/post/' + req.params.id);
+    const queryPost = await axios.get('http://localhost:1800/post/');
+    res.render('postItem', { 
+      postItem: query.data, 
+      posts: queryPost.data, 
+      id: req.params.id,
+     });
   });
 
 app.get('/blog', async (req, res) => {
