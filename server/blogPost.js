@@ -20,6 +20,11 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         author: req.body.author,
         photo: req.body.photo,
+        comment: [{
+            date: req.body.date,
+            commentauthor: req.body.commentauthor,
+            commenttext: req.body.commenttext
+        }],
     });
     try{
     const savedBlogPost = await blogpost.save()
@@ -50,18 +55,20 @@ router.get('/:postId', async (req, res) => {
 });
 
 // ADD COMMENT
-router.patch('/comment/:postId', async (req, res) => {
+router.post('/comment/:postId', async (req, res) => {
     try{
     const updatedPostComment = await BlogPost.updateOne({ _id: req.params.postId }, 
         {
             $push: {
                 comment: [{
-                    author: req.body.comment.author,
-                    text: req.body.comment.text   
-            }]}      
+                    date: req.body.date,
+                    commentauthor: req.body.commentauthor,
+                    commenttext: req.body.commenttext
+                }],
+            }      
             });
-        res.json(updatedPostComment);
-            }catch (err) {
+            res.redirect(`/postItem/${req.params.postId}`);
+        }catch (err) {
                 res.json({ message: err });
     }
 });

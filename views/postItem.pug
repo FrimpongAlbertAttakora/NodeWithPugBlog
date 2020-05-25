@@ -11,9 +11,29 @@ block content
         for i in ry
           p= i
     br
+    br
+    .container.my-4.bg-light
+        .text-left.text-info.my-3 Leave your comment here.
+        div
+            form(action=`http://localhost:1800/post/comment/${postItem._id}` method="post" class="was-validated shadow font-weight-bold") 
+                .form-group.mx-3
+                    label(for="" class="text-uppercase") Name
+                    input(type="text" name="commentauthor" id="" class="form-control" required)
+                .form-group.mx-3
+                    textarea(name="commenttext" cols="50" rows="5" placeholder="Comment text here ...")
+                .text-center
+                    input(type="submit" value="Comment" class="btn btn-primary mt-4 mb-5")
+        .text-left.text-info.my-3 Comments
+        .comments
+          - const comments = postItem.comment
+            for comment in comments
+              h6= comment.commentauthor
+              small= comment.date
+              p= comment.commenttext
+    br
     h4
       p 
-        em Previours Post
+        em Recent Post
     for post in posts
         a(href=`http://localhost:1800/postItem/${post._id}`)
             #item

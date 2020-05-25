@@ -82,12 +82,12 @@ h4 {
     ul.navbar-nav.nav-fill {
         margin-left: 0;
     }
-    
+
     img {
         height: 50vh;
-        width: 80%; 
+        width: 85%; 
         background-size: cover; 
-        background-position: center;
+        background-position: left;
     }
 
     .im img {

@@ -22,11 +22,11 @@ const BlogPostSchema = mongoose.Schema({
         type: Array(Date),
         default: Date.now
       },
-      author: {
+      commentauthor: {
         type: Array(String),
         require: true
       },  
-      text: {
+      commenttext: {
         type: Array(String),
         require: true
       }  
