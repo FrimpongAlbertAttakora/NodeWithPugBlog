@@ -63,7 +63,9 @@ mongoose.connect(
        useUnifiedTopology: true, 
     },
     () => console.log('Connected to DB')
-).catch(err => console.log(err));
+).catch((e) => {
+  console.log('handle error here: ', e.message)
+})
 
 const port = process.env.PORT || 1800;
 app.listen(port, () => console.log(`server started on port ${port}`));
